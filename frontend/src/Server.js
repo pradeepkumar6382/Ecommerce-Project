@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Server = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://ecommerce-project-umpn.onrender.com",
 });
 
 Server.interceptors.request.use(
