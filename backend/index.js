@@ -10,7 +10,10 @@ const secretkey="pradeep"
 app.use(express.json())
 app.use(cors())
 
-const admindb=mongoose.createConnection('mongodb://0.0.0.0:27017/admin')
+const admindb = mongoose.createConnection('mongodb+srv://Pradeep6382:Pradeep123%40@cluster0.3ncvr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+admindb.on("connected", () => {
+   console.log("MongoDB connected successfully!");
+ });
 const regmodel=admindb.model('registers',regschema)
 const productmodel=admindb.model("products",products)
 
@@ -96,3 +99,5 @@ app.post('/deleteproducts',middleware,async(req,res)=>{
       res.status(404).json({msg:"failure"})
    }
 })
+
+
