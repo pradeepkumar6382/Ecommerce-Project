@@ -1,0 +1,258 @@
+.dashboard-container {
+    padding: 20px;
+    background-color: #f4f6f8;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../Flowers.jpg');
+
+}
+.popupmodel {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: fixed; /* Ensures the popup stays fixed on screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Vertically center the form */
+    justify-content: center; /* Horizontally center the form */
+    z-index: 1000; /* Ensure the popup is above other content */
+}
+
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Distribute form elements evenly */
+    position: relative;
+    background-color: white; /* Set background to white for the form */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    width: 40%; /* Slightly larger form */
+    min-width: 400px; /* Minimum width for responsiveness */
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow around the form */
+    gap: 20px;
+    max-height: 80%; /* Max height to avoid overflow */
+    overflow-y: auto; /* Scroll if the form gets too long */
+}
+
+.edit-product-form label {
+    width: 100%; /* Full width for labels */
+    font-size: 16px; /* Slightly larger font size */
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.edit-product-form input,
+.edit-product-form textarea {
+    width: 100%; 
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;  
+    outline: none;
+    margin-bottom: 15px;  
+}
+
+.edit-product-form input:focus,
+.edit-product-form textarea:focus {
+    border-color: #96d71b;  
+}
+
+.edit-product-form button {
+    background-color: #96d71b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.edit-product-form button:hover {
+    background-color: #78b215; 
+}
+
+@media (max-width: 768px) {
+    .edit-product-form {
+        width: 80%;  
+        min-width: 300px; 
+    }
+
+    .edit-product-form button {
+        font-size: 14px; /* Adjust button size for smaller screens */
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.price-tag {
+    border: 2px solid white; 
+    padding: 5px 10px; 
+    font-weight: bold; 
+    font-size: 16px; 
+    text-align: center;  
+    margin-top: 10px; 
+    background-color: rgba(0, 0, 0, 0.2);  
+    border-radius: 5px;  
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease;
+}
+
+.product-card:hover {
+    transform:translateY(-20px);
+}
+
+.product-card figure {
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .action-buttons {
+    opacity: 1;
+}
+
+.action-buttons button {
+    background-color: #96d71b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #64aa14;
+}
+
+.logout-button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.logout-button:hover {
+    background-color: #c04e1a;
+}
+
+.loading, .error {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.delete-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    width: auto;
+    height: 100vh; 
+    row-gap: 10px;
+    background-image: url('../wildfire.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.inner-container {
+    width: 240px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(240, 240, 237, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(30, 2, 2);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px; 
+    font-weight: bold;   
+    font-size: 1rem;
+    row-gap: 10px; 
+ }
+ 
+ .inner-container button {
+     background-color: #f53925;
+     font-weight: bold;   
+     font-size: 1rem;
+     color: white;
+     border: none;
+     padding: 8px 16px;
+     cursor: pointer;
+     border-radius: 6px;
+     transition: all 0.3s ease-in-out;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+ }
+ 
+ .inner-container .button-2 {
+    background-color: #f53925;
+    font-weight: bold;   
+    font-size: 1rem;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 20px;
+}
+
+ .inner-container button:hover {
+     background-color: #6fe30a;
+     transform: scale(1.05);
+     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ }
+ 
